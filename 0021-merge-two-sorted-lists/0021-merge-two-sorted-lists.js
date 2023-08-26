@@ -10,20 +10,20 @@
  * @param {ListNode} list2
  * @return {ListNode}
  */
-var mergeTwoLists = function(l1, l2) {
+var mergeTwoLists = function(le1, le2) {
     var mergedHead = { val : -1, next : null },
         crt = mergedHead;
-    while(l1 && l2) {
-        if(l1.val > l2.val) {
-            crt.next = l2;
-            l2 = l2.next;
+    while(le1 && le2) {
+        if(le1.val > le2.val) {
+            crt.next = le2;
+            le2 = le2.next;
         } else {
-            crt.next = l1;
-            l1 = l1.next;
+            crt.next = le1;
+            le1 = le1.next;
         }
         crt = crt.next;
     }
-    crt.next = l1 || l2;
+    crt.next = le1 || le2;
     
     return mergedHead.next;
 };
